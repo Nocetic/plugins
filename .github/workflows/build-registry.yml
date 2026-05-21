@@ -1,0 +1,43 @@
+name: Build registry.json
+
+# Every push to main: re-derive registry.json from each plugin's
+# marketplace.json. The flowly-app marketplace fetches the raw URL of
+# this file at request time (with a 5-minute cache), so a merged PR
+# is visible in the marketplace within minutes — no flowly-app
+# deploy needed.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/marketplace.json'
+      - 'scripts/build-registry.mjs'
+      - '.github/workflows/build-registry.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build registry.json
+        run: node scripts/build-registry.mjs
+
+      - name: Commit + push if registry changed
+        run: |
+          if [[ -n "$(git status --porcelain registry.json)" ]]; then
+            git config user.name "flowly-bot"
+            git config user.email "bot@useflowlyapp.com"
+            git add registry.json
+            git commit -m "chore(registry): rebuild from marketplace.json updates"
+            git push
+          else
+            echo "registry.json is already up to date — no changes."
+          fi

@@ -1,0 +1,19 @@
+name: blender
+version: 0.2.1
+manifest_version: 1
+description: "Drive Blender from chat — render presets (preview/quality/final), GPU auto-detect, auto-open, export 3D assets, run bpy scripts. Headless; no GUI required."
+author: "Flowly contributors"
+kind: standalone
+provides_tools:
+  - blender_run
+  - blender_scene_info
+  - blender_render
+  - blender_export
+  - blender_create
+provides_commands:
+  - blender
+provides_hooks:
+  - pre_llm_call
+requires_env:
+  - name: FLOWLY_BLENDER_PATH
+    description: "Optional override for the Blender executable path. Auto-detected on macOS/Linux/Windows when unset."

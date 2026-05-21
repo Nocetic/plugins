@@ -1,0 +1,114 @@
+{
+  "generatedAt": "2026-05-21T23:55:07.192Z",
+  "schemaVersion": 1,
+  "plugins": [
+    {
+      "slug": "blender",
+      "name": "Blender",
+      "tagline": "Drive Blender from your Flowly agent — render, export, and run bpy scripts via chat.",
+      "description": "Headless Blender automation. The agent can render `.blend` files, export to GLB/FBX/OBJ/USDZ/STL/PLY, inspect scenes, and execute arbitrary `bpy` scripts. Auto-detects GPU (Metal / OPTIX / CUDA / HIP / oneAPI), validates output, and ships render presets for fast preview vs production quality.",
+      "category": "creative",
+      "tags": [
+        "3d",
+        "rendering",
+        "blender",
+        "bpy",
+        "creative"
+      ],
+      "version": "0.2.1",
+      "featured": true,
+      "emoji": "🎨",
+      "source": "github",
+      "repo": "Nocetic/plugins",
+      "subpath": "blender",
+      "author": {
+        "name": "Nocetic",
+        "url": "https://github.com/Nocetic"
+      },
+      "license": "Apache-2.0",
+      "requires": {
+        "external": [
+          "Blender 3.6 LTS or later"
+        ],
+        "env": [
+          "FLOWLY_BLENDER_PATH (optional override)"
+        ],
+        "platforms": [
+          "macos",
+          "linux",
+          "windows"
+        ]
+      },
+      "provides": {
+        "tools": [
+          "blender_run",
+          "blender_render",
+          "blender_export",
+          "blender_scene_info",
+          "blender_create"
+        ],
+        "hooks": [
+          "pre_llm_call"
+        ],
+        "commands": [
+          "/blender"
+        ],
+        "skills": [
+          "blender:scripting"
+        ]
+      },
+      "installCommand": "flowly plugins install Nocetic/plugins/blender"
+    },
+    {
+      "slug": "figma",
+      "name": "Figma",
+      "tagline": "Read, search, comment on, and export from Figma files — design-to-code without leaving chat.",
+      "description": "Talks to the Figma REST API on your behalf. Five tools: pull a file overview, read the node tree (frames, text, components), export PNG / JPG / SVG / PDF at any scale, search by text or layer name, and post pinned comments back. Ships with a `design-handoff` skill the agent loads on demand — covers URL parsing, orient-then-drill workflow, export defaults, spec extraction, and rate-limit handling. Read-side only; modifying the canvas requires Figma's in-app plugin runtime which isn't reachable from here.",
+      "category": "creative",
+      "tags": [
+        "design",
+        "figma",
+        "export",
+        "comments",
+        "handoff"
+      ],
+      "version": "0.1.0",
+      "featured": true,
+      "emoji": "🎨",
+      "source": "github",
+      "repo": "Nocetic/plugins",
+      "subpath": "figma",
+      "author": {
+        "name": "Nocetic",
+        "url": "https://github.com/Nocetic"
+      },
+      "license": "Apache-2.0",
+      "requires": {
+        "env": [
+          "FIGMA_ACCESS_TOKEN"
+        ],
+        "platforms": [
+          "macos",
+          "linux",
+          "windows"
+        ]
+      },
+      "provides": {
+        "tools": [
+          "figma_file_info",
+          "figma_read",
+          "figma_export",
+          "figma_search",
+          "figma_comment_add"
+        ],
+        "commands": [
+          "/figma"
+        ],
+        "skills": [
+          "figma:design-handoff"
+        ]
+      },
+      "installCommand": "flowly plugins install Nocetic/plugins/figma"
+    }
+  ]
+}

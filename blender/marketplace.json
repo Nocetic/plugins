@@ -1,0 +1,36 @@
+{
+  "slug": "blender",
+  "name": "Blender",
+  "tagline": "Drive Blender from your Flowly agent — render, export, and run bpy scripts via chat.",
+  "description": "Headless Blender automation. The agent can render `.blend` files, export to GLB/FBX/OBJ/USDZ/STL/PLY, inspect scenes, and execute arbitrary `bpy` scripts. Auto-detects GPU (Metal / OPTIX / CUDA / HIP / oneAPI), validates output, and ships render presets for fast preview vs production quality.",
+  "category": "creative",
+  "tags": ["3d", "rendering", "blender", "bpy", "creative"],
+  "version": "0.2.1",
+  "featured": true,
+  "emoji": "🎨",
+  "source": "github",
+  "repo": "Nocetic/plugins",
+  "subpath": "blender",
+  "author": {
+    "name": "Nocetic",
+    "url": "https://github.com/Nocetic"
+  },
+  "license": "Apache-2.0",
+  "requires": {
+    "external": ["Blender 3.6 LTS or later"],
+    "env": ["FLOWLY_BLENDER_PATH (optional override)"],
+    "platforms": ["macos", "linux", "windows"]
+  },
+  "provides": {
+    "tools": [
+      "blender_run",
+      "blender_render",
+      "blender_export",
+      "blender_scene_info",
+      "blender_create"
+    ],
+    "hooks": ["pre_llm_call"],
+    "commands": ["/blender"],
+    "skills": ["blender:scripting"]
+  }
+}
