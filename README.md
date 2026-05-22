@@ -13,7 +13,6 @@ flowly plugins install Nocetic/plugins/<name>
 | Plugin | Description | Install |
 |---|---|---|
 | [blender](./blender) | Render, export, and run bpy scripts via chat — headless Blender automation with GPU auto-detect | `flowly plugins install Nocetic/plugins/blender` |
-| [figma](./figma) | Read, search, comment, and export from Figma files via the REST API | `flowly plugins install Nocetic/plugins/figma` |
 
 ## Repository layout
 
