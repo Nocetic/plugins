@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-22T00:09:35.426Z",
+  "generatedAt": "2026-05-22T00:10:51.415Z",
   "schemaVersion": 1,
   "plugins": [
     {
@@ -109,41 +109,6 @@
         ]
       },
       "installCommand": "flowly plugins install Nocetic/plugins/figma"
-    },
-    {
-      "slug": "hello",
-      "name": "Hello",
-      "tagline": "Minimal sanity-check plugin used to verify the marketplace auto-sync pipeline.",
-      "description": "A tiny one-command plugin (`/hello`) that exists so we can prove a new plugin merged into the Nocetic/plugins monorepo flows through CI, lands in registry.json, and surfaces on the public marketplace. No tools, no integrations, no env requirements — just an echo. Safe to leave installed or remove at any time.",
-      "category": "utility",
-      "tags": [
-        "sanity",
-        "test",
-        "echo"
-      ],
-      "version": "0.1.0",
-      "emoji": "👋",
-      "source": "github",
-      "repo": "Nocetic/plugins",
-      "subpath": "hello",
-      "author": {
-        "name": "Nocetic",
-        "url": "https://github.com/Nocetic"
-      },
-      "license": "Apache-2.0",
-      "requires": {
-        "platforms": [
-          "macos",
-          "linux",
-          "windows"
-        ]
-      },
-      "provides": {
-        "commands": [
-          "/hello"
-        ]
-      },
-      "installCommand": "flowly plugins install Nocetic/plugins/hello"
     }
   ]
 }
