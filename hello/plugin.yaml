@@ -1,8 +1,0 @@
-name: hello
-version: 0.1.0
-manifest_version: 1
-description: "Minimal sanity-check plugin used to verify the marketplace auto-sync pipeline."
-author: "Nocetic"
-kind: standalone
-provides_commands:
-  - hello
